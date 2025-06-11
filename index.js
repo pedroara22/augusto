@@ -39,6 +39,7 @@ const data = db.collection("data");
 
 app.post('/newMemory', upload.single("file"), async (req, res) => {
     const file = req.file;
+    console.log(req.file)
 
     const memory = {
         title: req.body.title,
