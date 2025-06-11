@@ -11,7 +11,6 @@ const { ObjectId } = require("mongodb");
 app.use(cors({ origin: "*" }));
 
 app.use(express.json());
-app.use(bodyParser.json());
 
 const uri = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.bissghl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 const client = new MongoClient(uri);
