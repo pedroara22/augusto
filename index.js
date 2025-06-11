@@ -53,6 +53,8 @@ app.post('/newMemory', upload.single("file"), async (req, res) => {
             type: 'base64'
         });
 
+        console.log(response)
+
 
         memory.image = response.data.link;
 
