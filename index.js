@@ -50,11 +50,10 @@ app.post('/newMemory', upload.single("file"), async (req, res) => {
 
     try {
         const response = await imgurClient.upload({
-            image: fs.readFileSync(file.path, { encoding: 'base64' }),
+            image: file.buffer.toString("base64"),
             type: 'base64'
         });
 
-        fs.unlinkSync(file.path);
 
         memory.image = response.data.link;
 
